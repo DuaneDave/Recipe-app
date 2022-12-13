@@ -23,12 +23,16 @@ default: &default
 
 development:
   database: recipe_app_development
+<<<<<<< HEAD
   adapter: postgresql
   encoding: unicode
   database: postgres
   pool: 5
   username: postgres
   password: french2dave
+=======
+  username: ernest
+>>>>>>> 8079b90a22510cba7c3f402830dfa0e004b50d0e
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
