@@ -1,6 +1,4 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
 ruby '3.1.2'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
@@ -39,12 +37,8 @@ gem 'jbuilder'
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-<<<<<<< HEAD
-gem "tzinfo-data"
-=======
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
->>>>>>> 8079b90a22510cba7c3f402830dfa0e004b50d0e
 
+gem "tzinfo-data"
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
