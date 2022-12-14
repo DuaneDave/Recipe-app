@@ -1,10 +1,17 @@
-<div class='recipe'> 
-<button class='get'><%= link_to "Add Recipe", new_recipe_path %></button>
-<div class='done'>
-<% @recipes.each do |recipe| %>
-  <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
-  <p><%= recipe.description %></p>
-  <%= button_to "Delete", recipe_path(recipe.id),data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, method: :delete, class: "delete" %>
-<% end %>
+<section class="container flex food-placeholder">
+<div class="food flex"> 
+  <%= link_to new_recipe_path do %>
+    <button>Add Recipe</button>
+  <% end %>
+
+  <% @recipes.each do |recipe| %>
+  <div class='recipe flex'>
+    <div class="recipe-details flex">
+      <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+      <%= button_to "Remove", recipe_path(recipe.id),data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, method: :delete, class: "delete" %>
+    </div>
+    <p><%= recipe.description %></p>
+  </div>
+  <% end %>
 </div>
-</div>
+</section>
