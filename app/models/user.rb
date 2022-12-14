@@ -7,6 +7,6 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, :password, presence: true
 
-  has_many :foods
-  has_many :recipes
+  has_many :foods, dependent: :destroy
+  has_many :recipes, dependent: :destroy
 end
