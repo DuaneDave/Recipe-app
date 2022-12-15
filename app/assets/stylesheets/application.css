@@ -189,7 +189,7 @@ form {
   color: rgb(43, 43, 43);
 }
 
-.food table tr td a {
+.food table tr td .delete {
   padding: 4px 10px;
   border-radius: 30px;
   background: #fda3ab;
