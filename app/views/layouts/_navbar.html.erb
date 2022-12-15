@@ -1,0 +1,32 @@
+<nav class="navbar flex">
+  <div class='nav-link flex'>
+    <% if current_user%>
+      <%= form_with url: foods_path, method: :get do %>
+        <button>Foods</button>
+      <% end %>
+      <%= form_with url: recipes_path, method: :get do %>
+        <button>Recipes</button>
+      <% end %>
+      <%= form_with url: public_recipes_path, method: :get do %>
+        <button>Public Recipes</button>
+      <% end %>
+      <%= form_with url:general_shopping_list_path, method: :get do %>
+        <button>General Shopping List</button>
+      <% end %>
+      <%=form_with model: User.new, url: destroy_user_session_path do %> 
+        <button class="action">Sign out</button>
+      <% end %>
+    <% end %>
+  </div>
+  <div class='nav-list'>
+    <% unless current_user%>
+      <%= form_with model: User.new, url: new_user_session_path, method: :get do %>
+        <button> Sign in</button>
+      <% end %>
+
+      <%= form_with model: User.new, url: new_user_registration_path, method: :get do %>
+        <button>Sign up</button>
+      <% end %>
+    <% end %>
+  </div>
+</nav>
