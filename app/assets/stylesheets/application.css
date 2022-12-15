@@ -163,13 +163,14 @@ form {
   padding: 0.5rem;
 }
 
+.food a {
+  align-self: flex-end;
+}
+
+.recipe-info h2 a,
 .recipe-details h2 a {
   color: black;
   font-size: 2rem;
-}
-
-.food a {
-  align-self: flex-end;
 }
 
 .food table {
@@ -248,11 +249,6 @@ form {
 .recipe-info {
   flex-direction: column;
   gap: 1rem;
-}
-
-.recipe-info h2 a {
-  font-size: 2rem;
-  color: black;
 }
 
 .recipe-info span {
