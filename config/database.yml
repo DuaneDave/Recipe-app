@@ -25,10 +25,9 @@ development:
   database: recipe_app_development
   adapter: postgresql
   encoding: unicode
-  database: postgres
   pool: 5
-  username: postgres
-  password: french2dave
+  username: ernest
+  # password: french2dave
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -64,10 +63,9 @@ test:
   database: recipe_app_test
   adapter: postgresql
   encoding: unicode
-  database: postgres
   pool: 5
-  username: postgres
-  password: french2dave
+  username: ernest
+  # password: french2dave
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is

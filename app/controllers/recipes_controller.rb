@@ -11,10 +11,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
-  def public
-    @recipe = Recipe.where(public: true)
-  end
-
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
