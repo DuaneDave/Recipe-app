@@ -7,6 +7,14 @@ class FoodsController < ApplicationController
     @food = Food.new
   end
 
+  def destroy
+    @food = Food.find(params[:id])
+    if @food.destroy
+      flash[:notice] = 'Food was successfully deleted'
+    end
+    redirect_to foods_path
+  end
+
   def create
     @food = Food.new(food_params)
     @food.user = current_user
