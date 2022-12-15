@@ -13,7 +13,7 @@
       <%= form_with url:general_shopping_lists_path, method: :get do %>
         <button>General Shopping List</button>
       <% end %>
-      <%=form_with model: User.new, url: destroy_user_session_path do %> 
+      <%=form_with model: User.new, url: destroy_user_session_path, method: :delete do %>
         <button class="action">Sign out</button>
       <% end %>
     <% end %>
