@@ -3,7 +3,7 @@
   <div class='done'>
   <% @recipes.each do |recipe| %>
     <h4><%= link_to recipe.name, recipe_path(recipe) %></h4>
-    <p><%= recipe.description %></p>
+    <p><%= recipe.description.truncate_words(45, omission: '...(continued)') %></p>
     <%= button_to "Delete", recipe_path(recipe.id),data: { turbo_method: :delete, turbo_confirm: "Are you sure?"}, method: :delete, class: "delete" %>
   <% end %>
   </div>

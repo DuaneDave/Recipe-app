@@ -1,0 +1,26 @@
+<section>
+  <h1>General Shopping List</h1>
+  <div>
+    <p>Total Food Item: <%= @general_shopping_lists.count %> </p>
+    <p>Total price of food: $<%= @general_shopping_lists.map { |food| food.price}.sum %></p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @general_shopping_lists.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.quantity %> <%= food.measurement_unit %></td>
+          <td>$<%= food.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
