@@ -258,3 +258,8 @@ form {
 .recipe-cost {
   padding-block: 0.5rem;
 }
+
+.sum {
+  justify-content: space-between;
+  color: #e07981;
+}
