@@ -1,8 +1,9 @@
-<section>
-  <h1>General Shopping List</h1>
-  <div>
-    <p>Total Food Item: <%= @general_shopping_lists.count %> </p>
-    <p>Total price of food: $<%= @general_shopping_lists.map { |food| food.price}.sum %></p>
+<section class="container flex food-placeholder">
+<div class="food flex">
+  <h3 class="title">General Shopping List</h3>
+  <div class="sum flex">
+    <p>Amount of food to buy: <%= @general_shopping_lists.count %> </p>
+    <p>Total value of food needed: $<%= @general_shopping_lists.map { |food| food.price}.sum %></p>
   </div>
 
   <table>
@@ -23,4 +24,5 @@
       <% end %>
     </tbody>
   </table>
+</div>
 </section>
