@@ -186,7 +186,6 @@ Example:
 - Twitter: [@adonu_ernest](https://twitter.com/adonu_ernest)
 - LinkedIn: [Ernest Anyewe Adonu](www.linkedin.com/in/ernest-anyewe-adonu)
 
-
 👤 **Obiebi David**
 
 - GitHub: [@githubhandle](https://github.com/DuaneDave)
