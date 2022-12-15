@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  get '/general_shopping_list', to: 'foods#general'
+  get '/general_shopping_lists', to: 'general_shopping_lists#general'
   get '/public_recipes', to: 'public_recipes#public'
   # Defines the root path route ("/")
   root "foods#index"
