@@ -1,0 +1,14 @@
+<article>
+  <h3><%= @recipe.name %></h3>
+  <div class="preparation-details">
+    <div>
+      <p class="preparation-time">Preparation time: <%= @recipe.preparation_time %> hour(s)</p>
+      <p class="cooking-time">Cooking time: <%= @recipe.cooking_time %> hour(s)</p>
+    </div>
+    <div class="public_green">Public: <%= @recipe.public %></div><br>
+  </div>
+  <div class="recipe-description">
+    <h4>Description</h4>
+    <p><%= @recipe.description %></p>
+  </div>
+</article>
