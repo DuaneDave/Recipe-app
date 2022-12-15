@@ -29,6 +29,12 @@ ul {
   list-style: none;
 }
 
+.submit {
+  border-radius: 8px;
+  align-self: flex-end;
+  padding: 0.6em 2.5em;
+}
+
 .submit,
 button {
   cursor: pointer;
@@ -42,12 +48,6 @@ button {
 .submit:hover,
 button:hover {
   background: #e07981;
-}
-
-.submit {
-  border-radius: 8px;
-  align-self: flex-end;
-  padding: 0.6em 2.5em;
 }
 
 .on-load {
@@ -115,7 +115,6 @@ form {
   outline: 1px solid #ccc;
   border-radius: 8px;
   padding: 1rem;
-
 }
 
 .form h2 {
@@ -162,6 +161,11 @@ form {
   flex-direction: column;
   gap: 2rem;
   padding: 0.5rem;
+}
+
+.recipe-details h2 a {
+  color: black;
+  font-size: 2rem;
 }
 
 .food a {
@@ -212,12 +216,6 @@ form {
   flex-direction: column;
   gap: 1.5rem;
 }
-
-.recipe-details h2 a {
-  color: black;
-  font-size: 2rem;
-}
-
 
 .recipe-details button {
   background: transparent;
