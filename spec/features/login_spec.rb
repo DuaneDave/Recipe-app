@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Log in", type: :feature do
+RSpec.feature 'Log in', type: :feature do
   background { visit new_user_session_path }
   scenario 'Page should have a login form' do
     expect(page.has_field?('Email')).to be true
@@ -11,7 +11,7 @@ RSpec.feature "Log in", type: :feature do
   context 'Form Submission' do
     scenario 'Submit form without email and password' do
       click_button 'Log in'
-      expect(page).to have_content( 'Invalid Email or password.')
+      expect(page).to have_content('Invalid Email or password.')
     end
 
     scenario 'Submit form with incorrect email and password' do

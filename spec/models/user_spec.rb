@@ -4,7 +4,7 @@ RSpec.describe User, type: :model do
   describe 'validations' do
     subject { User.create(name: 'Ernest', email: 'recipeapp@gmail.com') }
 
-    before{ subject.save }
+    before { subject.save }
 
     it 'name should be present' do
       subject.name = nil
