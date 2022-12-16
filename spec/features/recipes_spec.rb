@@ -1,16 +1,17 @@
 require 'rails_helper'
-
-RSpec.feature "Recipes", type: :feature do
-  before (:all) do
-    @user = User.create(name: 'Ernest', email: 'ernestadonu@yahoo.com', confirmed_at: Time.now, password: '@34Recipe')
-    @recipe1 = Recipe.create(name: 'Rice', description: 'Rice is the food of the day', preparation_time:30, cooking_time: 30, user: @user, public: false)
-    @recipe2 = Recipe.create(name: 'Beans', description: 'Beans is the food of the day', preparation_time:30, cooking_time: 1, user: @user, public: true)
-    @recipe3 = Recipe.create(name: 'Yam', description: 'Yam is the food of the day', preparation_time:30, cooking_time: 30, user: @user, public: true)
-
-    @all_recipe = [@recipe1, @recipe2, @recipe3]
+# rubocop:disable Metrics/BlockLength
+RSpec.feature 'Recipes', type: :feature do
+  before(:all) do
+    @user = User.create(name: 'Ernest', email: 'ernestadonu@yahoo.com', confirmed_at: Time.now,
+                        password: '@34Recipe')
+    @recipe1 = Recipe.create(name: 'Rice', description: 'Rice is the food of the day', preparation_time: 3,
+                             cooking_time: 3, user: @user, public: false)
+    @recipe2 = Recipe.create(name: 'Beans', description: 'Beans is the food of the day', preparation_time: 3,
+                             cooking_time: 1, user: @user, public: true)
+    @all_recipe = [@recipe1, @recipe2]
   end
 
-  describe "GET /recipes" do
+  describe 'GET /recipes' do
     before do
       visit new_user_session_path
       fill_in 'Email', with: @user.email
@@ -19,18 +20,18 @@ RSpec.feature "Recipes", type: :feature do
       visit recipes_path
     end
 
-    it "displays all recipes" do
+    it 'displays all recipes' do
       @all_recipe.each do |recipe|
         expect(page).to have_content(recipe.name)
         expect(page).to have_content(recipe.description)
       end
     end
 
-    it "displays a link to create a new recipe" do
+    it 'displays a link to create a new recipe' do
       expect(page).to have_link('Add Recipe')
     end
 
-    it "displays a link to delete a recipe" do
+    it 'displays a link to delete a recipe' do
       expect(page).to have_button('Remove')
     end
 
@@ -40,3 +41,4 @@ RSpec.feature "Recipes", type: :feature do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

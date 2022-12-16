@@ -26,7 +26,7 @@ RSpec.feature 'Log in', type: :feature do
       @user = User.create(name: 'Ernest', email: 'ernestadonu@yahoo.com', confirmed_at: Time.now, password: '@34Recipe')
       fill_in 'Email', with: @user.email
       fill_in 'Password', with: @user.password
-      
+
       click_button 'Log in'
       expect(page).to have_content('Signed in successfully.')
     end

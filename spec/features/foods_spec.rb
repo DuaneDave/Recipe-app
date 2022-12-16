@@ -1,8 +1,9 @@
 require 'rails_helper'
-
-RSpec.feature "Foods", type: :feature do
-  before (:all) do
-    @user = User.create(name: 'Ernest', email: 'ernestadonu@yahoo.com', confirmed_at: Time.now, password: '@34Recipe')
+# rubocop:disable Metrics/BlockLength
+RSpec.feature 'Foods', type: :feature do
+  before(:all) do
+    @user = User.create(name: 'Ernest', email: 'ernestadonu@yahoo.com', confirmed_at: Time.now,
+                        password: '@34Recipe')
     @food1 = Food.create(name: 'Rice', measurement_unit: 'kg', price: 1000, quantity: 1, user: @user)
     @food2 = Food.create(name: 'Beans', measurement_unit: 'kg', price: 1000, quantity: 1, user: @user)
     @food3 = Food.create(name: 'Yam', measurement_unit: 'kg', price: 1000, quantity: 1, user: @user)
@@ -10,7 +11,7 @@ RSpec.feature "Foods", type: :feature do
     @all_food = [@food1, @food2, @food3]
   end
 
-  describe "GET /foods" do
+  describe 'GET /foods' do
     before do
       visit new_user_session_path
       fill_in 'Email', with: @user.email
@@ -18,17 +19,17 @@ RSpec.feature "Foods", type: :feature do
       click_button 'Log in'
     end
 
-    it "displays all foods" do
+    it 'displays all foods' do
       @all_food.each do |food|
         expect(page).to have_content(food.name)
       end
     end
 
-    it "displays a link to create a new food" do
+    it 'displays a link to create a new food' do
       expect(page).to have_link('Add Food')
     end
 
-    it "displays a link to delete a food" do
+    it 'displays a link to delete a food' do
       expect(page).to have_button('Delete')
     end
 
@@ -38,7 +39,7 @@ RSpec.feature "Foods", type: :feature do
     end
   end
 
-  describe "GET /foods/new" do
+  describe 'GET /foods/new' do
     before do
       visit new_user_session_path
       fill_in 'Email', with: @user.email
@@ -47,7 +48,7 @@ RSpec.feature "Foods", type: :feature do
       click_link 'Add Food'
     end
 
-    it "displays a form to create a new food" do
+    it 'displays a form to create a new food' do
       expect(page).to have_field('Name')
       expect(page).to have_field('Measurement Unit')
       expect(page).to have_field('Price')
@@ -55,7 +56,7 @@ RSpec.feature "Foods", type: :feature do
       expect(page).to have_button('Submit')
     end
 
-    it "redirects to the foods page when the create food button is clicked" do
+    it 'redirects to the foods page when the create food button is clicked' do
       fill_in 'Name', with: 'Rice'
       fill_in 'Measurement Unit', with: 'kg'
       fill_in 'Price', with: 1000
@@ -65,3 +66,4 @@ RSpec.feature "Foods", type: :feature do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
