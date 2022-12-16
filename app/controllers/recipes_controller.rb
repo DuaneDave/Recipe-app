@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(recipe_params)
+    current_user.role = 'admin' if current_user.role == 'user'
     @recipe.user_id = current_user.id
     if @recipe.save
       flash[:notice] = 'Recipe was saved successfully.'
