@@ -1,0 +1,28 @@
+<section class="container flex food-placeholder">
+<div class="food flex">
+  <h3 class="title">General Shopping List</h3>
+  <div class="sum flex">
+    <p>Amount of food to buy: <%= @general_shopping_lists.count %> </p>
+    <p>Total value of food needed: $<%= @general_shopping_lists.map { |food| food.price}.sum %></p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @general_shopping_lists.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.quantity %> <%= food.measurement_unit %></td>
+          <td>$<%= food.price %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+</section>

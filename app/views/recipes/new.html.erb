@@ -1,0 +1,35 @@
+<section class="sign container flex">
+  <div class="form flex">
+    <h2>New Recipe</h2>
+    <%= form_with model: @recipe do |form| %>
+      <% if @recipe.errors.any? %>
+        <div class='form-list'>
+          <h3><%= pluralize(@recipe.errors.count, "error") %> occurred: </h3>
+          <ul>
+            <%= @recipe.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class='field flex'>
+        <%= form.text_field :name, required: true, autofocus: true, placeholder: 'Name' %>
+      </div>
+      <div class='field flex'>
+        <%= form.number_field :preparation_time, required: true, autofocus: true, placeholder: 'Preparation Time' %>
+      </div>
+      <div class='field flex'>
+        <%= form.number_field :cooking_time, required: true, autofocus: true, placeholder: 'Cooking Time' %>
+      </div>
+      <div class='field flex'>
+        <%= form.text_area :description, required: true, autofocus: true, placeholder: 'Description' %>
+      </div>
+      <div class='field'> 
+        <%= form.label :public%>
+        <%= form.check_box :public%>
+      </div>
+
+      <%= form.submit 'Create Recipe', class: 'submit' %>
+    <% end %>
+  </div>
+</section>
