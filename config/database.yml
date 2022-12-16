@@ -26,8 +26,7 @@ development:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: postgres
-  password: french2dave
+  username: ernest
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -62,8 +61,8 @@ test:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: postgres
-  password: french2dave
+  username: ernest
+
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
